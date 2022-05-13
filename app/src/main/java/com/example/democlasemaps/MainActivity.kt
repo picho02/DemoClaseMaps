@@ -2,8 +2,11 @@ package com.example.democlasemaps
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -44,11 +47,47 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onMapReady(googleMap: GoogleMap) {
         //Este codigo se ejecutara cuando el fregment termine de cargarse
 
         map = googleMap
-        crearMarker()
+        findViewById<Button>(R.id.btnRestaurante1).setOnClickListener {
+            val coordinates = LatLng(19.310712835843994, -99.15401511669833)
+            val marker=MarkerOptions().position(coordinates).title("La quema del burro")
+            map.addMarker(marker)
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordinates,18f),
+                4000,null
+            )
+        }
+        findViewById<Button>(R.id.btnRestaurante2).setOnClickListener {
+            val coordinates = LatLng(19.306427477084235, -99.16041165622822)
+            val marker=MarkerOptions().position(coordinates).title("El carboncito")
+            map.addMarker(marker)
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordinates,18f),
+                4000,null
+            )
+        }
+        findViewById<Button>(R.id.btnRestaurante3).setOnClickListener {
+            val coordinates = LatLng(19.302835223171275, -99.16753344987059)
+            val marker=MarkerOptions().position(coordinates).title("El Remolkito del Sirloin")
+            map.addMarker(marker)
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordinates,18f),
+                4000,null
+            )
+        }
+        findViewById<Button>(R.id.btnRestaurante4).setOnClickListener {
+            val coordinates = LatLng(19.299987908824004, -99.10932359389902)
+            val marker=MarkerOptions().position(coordinates).title("La esperanza")
+            map.addMarker(marker)
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordinates,18f),
+                4000,null
+            )
+        }
         //tratar de acceder a la ubicacion del GPS
         enableLocation()
 
@@ -67,8 +106,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun requestLocationPermission(){
         if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)){
-            //Mostrar la ventan de permiso
-        }else{
+            //Mostrar la ventan de permiso        }else{
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                 REQUEST_CODE_LOCATION)
         }
@@ -91,7 +129,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         //super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
-    /*private fun createMarker() {
+    private fun createMarker() {
         val coordinates = LatLng(19.300734, -99.148618)
         val marker=MarkerOptions().position(coordinates).title("Estadio Azteca")
         map.addMarker(marker)
@@ -100,6 +138,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             4000,null
         )
 
-    }*/
+    }
 
 }

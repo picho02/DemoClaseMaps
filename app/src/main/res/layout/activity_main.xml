@@ -17,22 +17,22 @@
         android:id="@+id/btnRestaurante1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Restarurante1"/>
+        android:text="La Quema del Burro"/>
     <Button
         android:id="@+id/btnRestaurante2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Restarurante2"/>
+        android:text="El carboncito"/>
     <Button
         android:id="@+id/btnRestaurante3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Restarurante3"/>
+        android:text="El Remolkito del Sirloin"/>
     <Button
         android:id="@+id/btnRestaurante4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Restarurante4"/>
+        android:text="La esperanza"/>
 
 
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    <Button
+        android:id="@+id/btnRestaurante1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restarurante1"/>
+    <Button
+        android:id="@+id/btnRestaurante2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restarurante2"/>
+    <Button
+        android:id="@+id/btnRestaurante3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restarurante3"/>
+    <Button
+        android:id="@+id/btnRestaurante4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restarurante4"/>
+
+
+
+</LinearLayout>
